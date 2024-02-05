@@ -21,6 +21,6 @@
 import Register from "@/views/Auth/Register.vue";
 </script>
 
-<style >
+<style lang="scss">
 
 </style>

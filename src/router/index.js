@@ -13,6 +13,9 @@ const routes = [
         path: '/',
         name: 'app',
         component: AppLayout,
+        meta: {
+            requiresAuth: true
+        },
         children : [
             {
                 path: '/',
@@ -57,7 +60,7 @@ const router = createRouter({
 
 router.beforeEach(async (to, from) => {
     const soreAuth = useStoreAuth()
-    if (!soreAuth.user.id && to.name !== 'login') { // if the user is not legged in and try to go somewhere else other than login
+    if (!soreAuth.user.id && to.meta.requiresAuth) { // if the user is not legged in and try to go somewhere else other than login
         // redirect the user to the login page
         return { name: 'auth' }
     }

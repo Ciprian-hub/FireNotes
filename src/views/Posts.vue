@@ -2,7 +2,7 @@
   <div>
     <Spiner class="text-gray-600" v-if="storeNotes.loading"/>
     <template v-else>
-      <div class="bg-green-500 h-[400px] overflow-scroll">
+      <div class="border-b-2 h-[400px] overflow-scroll">
         <card v-for="note in storeNotes.notes" :key="note.id">
           <NoteComponent :note="note"/>
         </card>
